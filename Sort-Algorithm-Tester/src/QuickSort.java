@@ -12,6 +12,13 @@ public class QuickSort {
 
     }
 
+	/**
+	 * 	Recursive implementation of QuickSort, uses partition functino
+	 * @param arr
+	 * @param f
+	 * @param l
+	 * @return sorted array
+	 */
     public static int[] quickSort(int[] arr, int f, int l) {
 		if (l > f) {
 			int pi = partition(arr,f,l);
@@ -22,7 +29,13 @@ public class QuickSort {
 		return arr;
 	}
 
-	// Finds numbers bigger and  smaller than pivot and swaps them
+	/**
+	 * 
+	 * @param arr
+	 * @param f
+	 * @param l
+	 * @return
+	 */
 	private static int partition(int[] arr, int f, int l) {
 		int p = arr[f], li = f + 1, hi = l;
 		while (hi > li) {

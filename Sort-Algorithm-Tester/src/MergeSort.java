@@ -1,5 +1,11 @@
 public class MergeSort {
     
+	/**
+	 * Function used to implmeent Merge Sort
+	 * Recursivley splits given array in half and passes it to merge function
+	 * @param arr
+	 * @return sorted array
+	 */
     public static int[] mergeSort(int[] arr) {
 		int index = 0;
 		
@@ -30,9 +36,12 @@ public class MergeSort {
 		return arr;
 	}
 
-	/*
-     * Merges the first or second half of the array
-     */
+	/**
+	 * Merges the left and right hand side together
+	 * @param fh
+	 * @param sh
+	 * @param arr
+	 */
 	public static void merge(int[] fh, int[] sh, int[] arr) {
         int i = 0;
         int j = 0;

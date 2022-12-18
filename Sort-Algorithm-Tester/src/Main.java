@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Main {
-
+    
     public static void main(String[] args) {
 
         int[] arrSizeFiftyThousand = new int[50000]; 
@@ -20,14 +20,22 @@ public class Main {
         
     }
 
+    /**
+     * Randomizes a given array
+     * @param array
+     */
     public static void randomizeArray(int[] array) {
         Random rand = new Random();
 		for (int i = 0; i < array.length; i++) {
 			array[i] = rand.nextInt(100);
 		}
-
     }
 
+    /**
+     * Executes all the sorting algorithms for the arrays
+     * Prints to stdout the results in a table
+     * @param list
+     */
     public static void executeAlgorithm(List<int[]> list) {
         long startTime;
         long endTime;
