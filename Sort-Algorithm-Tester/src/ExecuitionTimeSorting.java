@@ -6,16 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-/*
- * Class: CMSC214 
- * Instructor: Cristopher Fallon
- * Date: 3/4/2022
- * Description: This class uses File to decrypt a previously encrypted class
- * I pledge that I have completed the programming assignment independently.
-   I have not copied the code from a student or any source.
-   I have not given my code to any student.
-   Print your Name here: Alex Matos
-*/
+
 
 public class ExecuitionTimeSorting {
 
@@ -36,12 +27,14 @@ public class ExecuitionTimeSorting {
 		List<int[]> list = Arrays.asList(fiftyArr, hundredArr, hundredFiftyArr, twoHundredArr, twoHundredFiftyArr, threeHundredArr, twoMillion, threeMillion, fourMillion, fiveMillion, testArr);
 		createTable();
 		Random rand = new Random();
-		for (int[] x : list)
+		for (int[] x : list) {
 			for (int i = 0; i < x.length; i++) {
 				x[i] = rand.nextInt(100);
 			}
-		for (int[] x : list)
+		}
+		for (int[] x : list) {
 			fillTable(x);
+		}
 		
 	}
 	
@@ -50,7 +43,11 @@ public class ExecuitionTimeSorting {
 		long endTime;
 		long executionTime;
 		
-		System.out.print(fiftyArr.length + "\t\t|"); startTime = System.currentTimeMillis();selectionSort(fiftyArr); endTime = System.currentTimeMillis(); executionTime = endTime - startTime;
+		System.out.print(fiftyArr.length + "\t\t|"); 
+		startTime = System.currentTimeMillis();
+		selectionSort(fiftyArr); 
+		endTime = System.currentTimeMillis(); 
+		executionTime = endTime - startTime;
 		System.out.print("\t"+executionTime);
 		startTime = System.currentTimeMillis(); radixSort(fiftyArr); endTime = System.currentTimeMillis(); executionTime = endTime - startTime;
 		System.out.print("\t\t"+executionTime);
