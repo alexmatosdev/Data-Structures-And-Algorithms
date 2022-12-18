@@ -1,16 +1,5 @@
 import java.util.Collection;
 
-/*
- * Class: CMSC214 
- * Instructor: Cristopher Fallon
- * Date: 3/16/2022
- * Description: This class uses File to decrypt a previously encrypted class
- * I pledge that I have completed the programming assignment independently.
-   I have not copied the code from a student or any source.
-   I have not given my code to any student.
-   Print your Name here: Alex Matos
-*/
-
 public interface MyList<E> extends Collection<E> {
   /** Add a new element at the specified index in this list */
   public void add(int index, E e);

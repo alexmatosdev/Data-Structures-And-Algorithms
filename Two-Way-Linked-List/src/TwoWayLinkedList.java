@@ -1,6 +1,4 @@
 import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
 
 
 public class TwoWayLinkedList<T> implements MyList<T>{
@@ -8,8 +6,13 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 	Node head, tail = null;
 	int size = 0;
 
+	/*
+	 * Adds a node to the front of the list
+	 * @param data used to create the node
+	 * @return the node that was added
+	 */
 	public TwoWayLinkedList<T> addFirst(T data) {
-		// TODO Auto-generated method stub
+		// If list is empty, add node to the front
 		if (isEmpty()) {
 			head = new Node(null,data,tail);
 			tail = new Node(head,data,null);
@@ -24,8 +27,13 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 		return this;
 	}
 
+	/*
+	 * Adds node to the end of the list
+	 * @param data used to create the node 
+	 * @return node that was added to the list
+	 */
 	public TwoWayLinkedList<T> addLast(T data) {
-		// TODO Auto-generated method stub
+		
 		Node temp = new Node(tail,data,null);
 		if (tail != null)
 			tail.next = temp;
@@ -35,7 +43,9 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 		size++;
 		return this;
 	}
-
+	/*
+	 * Removes first element in the list
+	 */
 	public TwoWayLinkedList<T> removeFirst() {
 		Node temp = head;
 		head = temp.next;
@@ -43,26 +53,33 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 		return this;
 	}
 
+	/*
+	 * Removes last element in the list
+	 */
 	public TwoWayLinkedList<T> removeLast() {
 		Node temp = tail;
 		tail = temp;
 		size--;
 		return this;
 	}
-
+	
+	/*
+	 * Returns the data from the head node
+	 */
 	public T getFirst() {
-		// TODO Auto-generated method stub
+		
 		return head.data;
 	}
 
+	/*
+	 * Returns the data from the last node in the list
+	 */
 	public T getLast() {
-		// TODO Auto-generated method stub
 		return tail.data;
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
 		head = null;
 		tail = null;
 		size = 0;
@@ -70,7 +87,6 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public boolean contains(Object arg0) {
-		// TODO Auto-generated method stub
 		Node current = head;
 
 		for (int i = 0; i < size; i++) {
@@ -83,19 +99,16 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public Iterator<T> iterator() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return size;
 	}
 
 	@Override
 	public void add(int index, T e) {
-		// TODO Auto-generated method stub
 		if (index == size) {
 			addLast(e);
 			size++;
@@ -118,7 +131,6 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public T get(int index) {
-		// TODO Auto-generated method stub
 		Node current = head;
 
 		for (int i = 0; i <= index; i++)
@@ -129,7 +141,6 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public int indexOf(Object e) {
-		// TODO Auto-generated method stub
 		Node current= head;
 
 		for (int i = 0; i < size; i++) {
@@ -144,7 +155,6 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public int lastIndexOf(T e) {
-		// TODO Auto-generated method stub
 		int lastIndex = 0;
 		Node current = head;
 
@@ -159,7 +169,6 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public T remove(int index) {
-		// TODO Auto-generated method stub
 		if (index > size || index < 0) {
 			return null;
 		}
@@ -188,7 +197,6 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 
 	@Override
 	public T set(int index, T e) {
-		// TODO Auto-generated method stub
 		Node current = head;
 
 		for (int i = 0; i <= index; i++) {
@@ -201,6 +209,7 @@ public class TwoWayLinkedList<T> implements MyList<T>{
 		return null;
 	}
 
+	
 	public class Node {
 
 		public T data;
