@@ -2,7 +2,7 @@ public class MergeSort {
     
     public static int[] mergeSort(int[] arr) {
 		int index = 0;
-
+		
 		if (arr.length > 1) {
 
             /* Gets the first half of the array */
